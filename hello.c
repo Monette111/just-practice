@@ -1,72 +1,76 @@
+//æœ¬ä½œä¸šå…¨éƒ¨é‡‡ç”¨GBä¸­æ–‡ç¼–ç 
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<ctype.h>
  void input(){
    FILE* fp=fopen("scoresystem.txt","a");
      if(fp==NULL){
-      printf("ÎŞ·¨´ò¿ª»ò´´½¨\n");
+      printf("æ— æ³•æ‰“å¼€æˆ–åˆ›å»º\n");
        EXIT_FAILURE;
      }
        
     char name[10];
-    printf("ÇëÊäÈëĞÕÃû£º\n");
+    printf("è¯·è¾“å…¥å§“åï¼š\n");
     scanf("%9s", name); 
-    fprintf(fp, "\nĞÕÃû:%s\n", name);
+    fprintf(fp, "\nå§“å:%s\n", name);
  
     int year;
-    printf("ÇëÊäÈë³öÉúÄê£º\n");
+    printf("è¯·è¾“å…¥å‡ºç”Ÿå¹´ï¼š\n");
     scanf("%d", &year);
-    fprintf(fp, "³öÉúÄê£º%d\n", year);
+    fprintf(fp, "å‡ºç”Ÿå¹´ï¼š%d\n", year);
  
     char gender;
-    printf("ÇëÊäÈëĞÔ±ğ(M/F): \n");
+    printf("è¯·è¾“å…¥æ€§åˆ«(M/F): \n");
     scanf(" %c", &gender); 
-    fprintf(fp, "ĞÔ±ğ:%c\n", gender);
+    fprintf(fp, "æ€§åˆ«:%c\n", gender);
  
     char class[5];
-    printf("ÇëÊäÈë°à¼¶£º\n");
+    printf("è¯·è¾“å…¥ç­çº§ï¼š\n");
     scanf("%4s", class);  
-    fprintf(fp, "°à¼¶:%s\n", class);
+    fprintf(fp, "ç­çº§:%s\n", class);
  
     char major[99];
-    printf("ÇëÊäÈë×¨Òµ:\n");
+    printf("è¯·è¾“å…¥ä¸“ä¸š:\n");
     scanf("%98s", major); 
-    fprintf(fp, "×¨Òµ:%s\n", major);
+    fprintf(fp, "ä¸“ä¸š:%s\n", major);
  
     char college[99];
-    printf("ÇëÊäÈëÑ§Ôº: \n");
+    printf("è¯·è¾“å…¥å­¦é™¢: \n");
     scanf("%98s", college);
-    fprintf(fp, "Ñ§Ôº:%s\n", college);
+    fprintf(fp, "å­¦é™¢:%s\n", college);
  
     int math, introduction, c, PE, politics;
-    printf("ÇëÊäÈë¸ßÊı³É¼¨:\n");
+    printf("è¯·è¾“å…¥é«˜æ•°æˆç»©:\n");
     scanf("%d", &math);
-    fprintf(fp, "¸ßÊı³É¼¨:%d\n", math);
+    fprintf(fp, "é«˜æ•°æˆç»©:%d\n", math);
  
-    printf("ÇëÊäÈëµ¼ÂÛ³É¼¨:\n");
+    printf("è¯·è¾“å…¥å¯¼è®ºæˆç»©:\n");
     scanf("%d", &introduction);
-    fprintf(fp, "µ¼ÂÛ³É¼¨:%d\n", introduction);
+    fprintf(fp, "å¯¼è®ºæˆç»©:%d\n", introduction);
  
-    printf("ÇëÊäÈëcÓïÑÔ³É¼¨:\n");
+    printf("è¯·è¾“å…¥cè¯­è¨€æˆç»©:\n");
     scanf("%d", &c);
-    fprintf(fp, "cÓïÑÔ³É¼¨:%d\n", c);
+    fprintf(fp, "cè¯­è¨€æˆç»©:%d\n", c);
  
-    printf("ÇëÊäÈëÌåÓı³É¼¨\n");
+    printf("è¯·è¾“å…¥ä½“è‚²æˆç»©\n");
     scanf("%d", &PE);
-    fprintf(fp, "ÌåÓı³É¼¨:%d\n", PE);
+    fprintf(fp, "ä½“è‚²æˆç»©:%d\n", PE);
  
-    printf("ÇëÊäÈëÕşÖÎ³É¼¨:\n");
+    printf("è¯·è¾“å…¥æ”¿æ²»æˆç»©:\n");
     scanf("%d", &politics);
-    fprintf(fp, "ÕşÖÎ³É¼¨:%d\n", politics);
+    fprintf(fp, "æ”¿æ²»æˆç»©:%d\n", politics);
  
     fclose(fp);
     
 
       system("pause");
+       
+
  }
  void del(){
-    printf("³É¼¨É¾³ı\n"); 
-    printf("ÇëÊäÈëĞèÒªÉ¾³ıµÄĞÕÃû\n");
+    printf("æˆç»©åˆ é™¤\n"); 
+    printf("è¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å§“å\n");
       char name[50]; 
     scanf("%49s", name); 
  
@@ -86,9 +90,9 @@
     char temp[100]; 
     char name_in_file[50]; 
     while (fgets(temp, sizeof(temp), fdelname) != NULL) {
-        if (strncmp(temp, "ĞÕÃû£º", strlen("ĞÕÃû£º")) == 0) {
+        if (strncmp(temp, "å§“åï¼š", strlen("å§“åï¼š")) == 0) {
             
-            sscanf(temp, "ĞÕÃû£º%49s", name_in_file);
+            sscanf(temp, "å§“åï¼š%49s", name_in_file);
             name_in_file[strcspn(name_in_file, "\n")] = 0; 
  
             if (strcmp(name_in_file, name) == 0) {
@@ -104,28 +108,45 @@
      fclose(fdelname);
      fclose(Newflie);
     
-     system("pause");
-
+     const char *temp3 = "new.txt";
+    const char *scoresystem = "scoresystem.txt";
+ 
+    // å°è¯•åˆ é™¤ç›®æ ‡æ–‡ä»¶
+    if (remove(scoresystem) != 0) {
+        perror("åˆ é™¤ç›®æ ‡æ–‡ä»¶å¤±è´¥");
+        
+       
+    }
+ 
+    // å°†æºæ–‡ä»¶é‡å‘½åä¸ºç›®æ ‡æ–‡ä»¶
+    if (rename(temp3, scoresystem) != 0) {
+        perror("é‡å‘½åæ–‡ä»¶å¤±è´¥");
+        
+        return ;
+    }
+ 
+    printf("æ–‡ä»¶æ›¿æ¢æˆåŠŸ: %s -> %s\n", temp3, scoresystem);
+ system("pause");
  }
  void find(){
-    printf("³É¼¨²éÕÒ\n");
-     printf("ÇëÊäÈëĞÕÃû\n");
+    printf("æˆç»©æŸ¥æ‰¾\n");
+     printf("è¯·è¾“å…¥å§“å\n");
     FILE *fp=fopen("scoresystem.txt","r");
      char name[40];
      scanf("%39s",name);
        char temp[100];
        char name_in_file[50];
      while((fgets(temp,sizeof(temp),fp))!=NULL){
-         if (strncmp(temp, "ĞÕÃû£º", strlen("ĞÕÃû£º")) == 0) {
+         if (strncmp(temp, "å§“åï¼š", strlen("å§“åï¼š")) == 0) {
             
-            sscanf(temp, "ĞÕÃû£º%49s", name_in_file);
+            sscanf(temp, "å§“åï¼š%49s", name_in_file);
             name_in_file[strcspn(name_in_file, "\n")] = 0; 
  
             if (strcmp(name_in_file, name) == 0){
-              for(int i=0;i<6;i++){ 
+              for(int i=0;i<6;i++){  
               fgets(temp,sizeof(temp),fp);
             }
-            printf("ÄãµÄ³É¼¨ÊÇ£º\n");
+            printf("ä½ çš„æˆç»©æ˜¯ï¼š\n");
             for(int j=0;j<5;j++){
               printf("%s",temp);
               fgets(temp,sizeof(temp),fp);
@@ -141,58 +162,113 @@
  
  }
 
- void sort(){
-    printf("³É¼¨ÅÅĞò\n");
+void sort(){
+    printf("æˆç»©æ’åº\n");
     FILE *fp=fopen("scoresystem.txt","r");
     
     if(fp==NULL){
-      printf("Ã»ÓĞÎÄ¼ş\n");
+      printf("æ²¡æœ‰æ–‡ä»¶\n");
      return;
-    }
+    }   
     FILE *fp2=fopen("process.txt","w");
      char temp[100];
-     char score[5][50];
+     char num1[5][50];
      int num[5];
+     
       while(fgets(temp,sizeof(temp),fp)!=NULL){
         for(int i=0;i<5;i++){
           fputs(temp,fp2);
+          
           fgets(temp,sizeof(temp),fp);
+          
         }
-        fputs(temp,fp2);
-         
-        for(int i=0;i<5;i++){
-             fgets(score[i],50,fp);
-             sscanf(score[i]," %d",&num[i]);
-             
+         fputs(temp,fp2);
+         fgets(temp,sizeof(temp),fp);
+        if(strncmp(temp, "é«˜æ•°ï¼š", strlen("é«˜æ•°ï¼š")) == 0) {
+            
+            sscanf(temp, "é«˜æ•°ï¼š%49s", num1[0]);
+       
+          
         }
-        for(int j=0;j<4;j++){
-             for(int z=0;z<4;z++){
-                if(num[z]>num[z+1]){
-                  int temp;
-                   
-                }
-             }
+        fgets(temp,sizeof(temp),fp);
+        if(strncmp(temp, "å¯¼è®ºï¼š", strlen("å¯¼è®ºï¼š"))==0){
+          sscanf(temp,"å¯¼è®ºï¼š%49s",num1[1]);
+        }
+        fgets(temp,sizeof(temp),fp);
+        if(strncmp(temp,"cè¯­è¨€ï¼š",strlen("cè¯­è¨€ï¼š"))==0){
+          sscanf(temp,"cè¯­è¨€ï¼š%49s",num1[2]);
         }
         
-
+        fgets(temp,sizeof(temp),fp);
+        if(strncmp(temp,"ä½“è‚²ï¼š",strlen("ä½“è‚²ï¼š"))==0){
+          sscanf(temp,"ä½“è‚²ï¼š%49s",num1[3]);
+        }
+        fgets(temp,sizeof(temp),fp);
+        if(strncmp(temp,"æ”¿æ²»ï¼š",strlen("æ”¿æ²»ï¼š"))==0){
+          sscanf(temp,"æ”¿æ²»ï¼š%49s",num1[4]);
+        }
+        for(int i=0;i<5;i++){
+          num[i]=atoi(num1[i]);
+        }
+        for(int i=0;i<4;i++){
+          for(int j=0;j<4;j++){
+            if(num[j]<num[j+1]){
+              int temp1;
+              temp1=num[j];
+              num[j]=num[j+1];
+                 num[j+1]=temp1;
+            }
+          }
+        }
+        fprintf(fp2,"é«˜æ•°ï¼š%d\n",num[0]);
+        fprintf(fp2,"å¯¼è®ºï¼š%d\n",num[1]);
+        fprintf(fp2,"cè¯­è¨€ï¼š%d\n",num[2]);
+        fprintf(fp2,"ä½“è‚²ï¼š%d\n",num[3]);
+        fprintf(fp2,"æ”¿æ²»ï¼š%d\n",num[4]);
       }
+            
+
           fclose(fp);
           fclose(fp2);
-     system("pause");
- }
+
+    
+
+
+ const char *temp2 = "process.txt";
+    const char *scoresystem = "scoresystem.txt";
+ 
+    // å°è¯•åˆ é™¤ç›®æ ‡æ–‡ä»¶
+    if (remove(scoresystem) != 0) {
+        perror("åˆ é™¤ç›®æ ‡æ–‡ä»¶å¤±è´¥");
+        
+       
+    }
+ 
+    // å°†æºæ–‡ä»¶é‡å‘½åä¸ºç›®æ ‡æ–‡ä»¶
+    if (rename(temp2, scoresystem) != 0) {
+        perror("é‡å‘½åæ–‡ä»¶å¤±è´¥");
+        
+        return ;
+    }
+ 
+    printf("æ–‡ä»¶æ›¿æ¢æˆåŠŸ: %s -> %s\n", temp2, scoresystem);
+
+   system("pause");
+}
+ 
  void replace(){
   FILE *fp=fopen("scoresystem.txt","r");
    FILE *fp2=fopen("temp.txt","w");
   if(fp==NULL){
-    printf("ÎŞ·¨´ò¿ª\n");
+    printf("æ— æ³•æ‰“å¼€\n");
     return;
   }
-    printf("³É¼¨ĞŞ¸Ä\n");
+    printf("æˆç»©ä¿®æ”¹\n");
      char name[20];
-     printf("ÇëÊäÈëÄãµÄĞÕÃû\n");
+     printf("è¯·è¾“å…¥ä½ çš„å§“å\n");
       scanf("%19s",name);
        char subject[30];
-       printf("ÄãÏëÒªĞŞ¸ÄµÄ¿ÆÄ¿\n");
+       printf("ä½ æƒ³è¦ä¿®æ”¹çš„ç§‘ç›®\n");
        scanf("%29s",subject);
         char temp[100];
         char name_in_file[50];
@@ -201,8 +277,8 @@
         int found=0;
         while(fgets(temp,sizeof(temp),fp)!=NULL){
            line_num+=1;
-           if(strncmp(temp,"ĞÕÃû£º",strlen("ĞÕÃû£º"))==0){
-            sscanf(temp,"ĞÕÃû£º%49s", name_in_file);
+           if(strncmp(temp,"å§“åï¼š",strlen("å§“åï¼š"))==0){
+            sscanf(temp,"å§“åï¼š%49s", name_in_file);
              name_in_file[strcspn(name_in_file, "\n")] = 0; 
             if(strcmp(name_in_file,name)==0){
               for(int i=0;i<10;i++){
@@ -226,29 +302,49 @@
                 fgets(temp,sizeof(temp),fp);
                    fprintf(fp2,"%s",temp);
            }
-        printf("ÄãÏëÒªĞŞ¸ÄÎª¶àÉÙ·Ö£º\n");
+        printf("ä½ æƒ³è¦ä¿®æ”¹ä¸ºå¤šå°‘åˆ†ï¼š\n");
               int newScore;
               scanf("%d",&newScore);
-               fprintf(fp2,"%s£º%d\n",subject,newScore);
+               fprintf(fp2,"%sï¼š%d\n",subject,newScore);
                fgets(temp,sizeof(temp),fp);
                while(fgets(temp,sizeof(temp),fp)!=NULL){
                 fprintf(fp2,"%s",temp);
                }
                fclose(fp);
                fclose(fp2);
-               _rename("temp.txt", "scoresystem.txt");
+
+    const char *temp1 = "temp.txt";
+    const char *scoresystem = "scoresystem.txt";
+ 
+    // å°è¯•åˆ é™¤ç›®æ ‡æ–‡ä»¶
+    if (remove(scoresystem) != 0) {
+        perror("åˆ é™¤ç›®æ ‡æ–‡ä»¶å¤±è´¥");
+        
+       
+    }
+ 
+    // å°†æºæ–‡ä»¶é‡å‘½åä¸ºç›®æ ‡æ–‡ä»¶
+    if (rename(temp1, scoresystem) != 0) {
+        perror("é‡å‘½åæ–‡ä»¶å¤±è´¥");
+        
+        return ;
+    }
+ 
+    printf("æ–‡ä»¶æ›¿æ¢æˆåŠŸ: %s -> %s\n", temp1, scoresystem);
+  
+              
      system("pause");
  }
  void menu(){
     system("cls");
-    printf("\n\n\n\t\t\t    »¶Ó­Ê¹ÓÃÑ§Éú³É¼¨¹ÜÀíÏµÍ³\n\n\n");
+    printf("\n\n\n\t\t\t    æ¬¢è¿ä½¿ç”¨å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ\n\n\n");
     printf("\t\t\t ******************************\n");
-    printf("\t\t\t *            Ö÷²Ëµ¥          *\n");
+    printf("\t\t\t *            ä¸»èœå•          *\n");
     printf("\t\t\t ******************************\n\n\n");
-    printf("\t\t          1 ³É¼¨ÊäÈë         2 ³É¼¨É¾³ı\n\n");
-    printf("\t\t          3 ³É¼¨²éÑ¯         4 ³É¼¨ÅÅĞò\n\n");
-    printf("\t\t          5 ³É¼¨ĞŞ¸Ä         6 ÍË³öÏµÍ³\n\n");
-    printf("\t\t          ÇëÑ¡Ôñ[1/2/3/4/5/6]: ");
+    printf("\t\t          1 æˆç»©è¾“å…¥         2 æˆç»©åˆ é™¤\n\n");
+    printf("\t\t          3 æˆç»©æŸ¥è¯¢         4 æˆç»©æ’åº\n\n");
+    printf("\t\t          5 æˆç»©ä¿®æ”¹         6 é€€å‡ºç³»ç»Ÿ\n\n");
+    printf("\t\t          è¯·é€‰æ‹©[1/2/3/4/5/6]: ");
 
     
  }
